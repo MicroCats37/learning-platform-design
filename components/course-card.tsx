@@ -15,7 +15,7 @@ interface Taller {
   precioHabilitado?: number // Agregado precio para colegiados habilitados
   duracion: string
   instructor: string
-  imagen?: string
+  imagen: string
   categoria: string
   nivel: string
   cupos: number
@@ -86,16 +86,8 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
             <div className="flex flex-col">
               <span className="text-[10px] font-bold text-muted-foreground uppercase leading-none mb-1">General</span>
               <div className="text-xl font-black text-foreground">
-                
-                {taller.precio === 0 ? (
-                  <span className="text-xs mr-0.5">S/
-                    Gratuis
-                  </span>
-                ) : (
-                  <span className="text-xs mr-0.5">S/
-                    {taller.precio}
-                  </span>
-                  )}
+                <span className="text-xs mr-0.5">S/</span>
+                {taller.precio}
               </div>
             </div>
             {taller.precioHabilitado && (
@@ -126,7 +118,7 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
             className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-black shadow-glow-primary group/btn rounded-xl"
             asChild
           >
-            <Link href="/pago" className="flex items-center justify-center gap-2">
+            <Link href="/#registro" className="flex items-center justify-center gap-2">
               RESERVAR MI LUGAR
               <Sparkles className="w-4 h-4 group-hover/btn:rotate-12 transition-transform" />
             </Link>

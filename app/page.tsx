@@ -8,6 +8,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 import { FeaturedCarousel } from "@/components/featured-carousel"
+import { RegistrationSection } from "@/components/registration-section"
 import { motion } from "framer-motion"
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
       </section>
 
       <FeaturesSection />
+      
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
@@ -51,13 +53,13 @@ export default function Home() {
                   },
                   {
                     step: "03",
-                    title: "Realiza el pago",
-                    desc: "Utiliza nuestros diversos medios de pago (Yape, Plin o tarjetas).",
+                    title: "Recibe confirmación",
+                    desc: "Recibirás un correo con toda la información para iniciar tu taller.",
                   },
                   {
                     step: "04",
                     title: "¡Empieza a crear!",
-                    desc: "Recibirás toda la información para iniciar tu taller de ingeniería.",
+                    desc: "Asiste a tu primera clase y comienza tu aventura de aprendizaje.",
                   },
                 ].map((item, i) => (
                   <motion.div
@@ -66,6 +68,7 @@ export default function Home() {
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
+                    viewport={{ once: true }}
                   >
                     <span className="text-5xl font-black text-primary/10">{item.step}</span>
                     <div>
@@ -78,12 +81,15 @@ export default function Home() {
             </div>
             <div className="flex-1 relative">
               <div className="aspect-video rounded-3xl overflow-hidden shadow-glow-primary border-4 border-white">
-                <img src="/student-registering-online.jpg" className="object-cover" alt="registro" />
+                <img src="/student-registering-online.jpg" className="object-cover w-full h-full" alt="registro" />
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* <CHANGE> Added Registration Section */}
+      <RegistrationSection />
 
       <TestimonialsSection />
       <CTASection />

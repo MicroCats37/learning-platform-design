@@ -7,23 +7,25 @@ import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { TextPlugin } from "gsap/TextPlugin"
 import Link from "next/link"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 gsap.registerPlugin(TextPlugin)
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
+  const isMobile = useIsMobile()
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end center"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+  const y = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "15%"])
+  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0])
 
   useEffect(() => {
-    const words = ["Ingeniería", "Tecnología", "Robótica", "Creatividad"] // Palabras más acordes a los nuevos talleres
+    const words = ["Ingeniería", "Tecnología", "Robótica", "Creatividad"]
     let currentIndex = 0
 
     const animateText = () => {
@@ -49,7 +51,7 @@ export function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[120vh] flex items-center pt-32 pb-48 overflow-hidden md:min-h-[110vh]"
+      className="relative min-h-[130vh] md:min-h-[120vh] flex items-center pt-32 pb-56 md:pb-48 overflow-hidden"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -86,6 +88,7 @@ export function HeroSection() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="md:motion-safe:translate-y-0" // Ensured better mobile behavior
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -129,8 +132,8 @@ export function HeroSection() {
               className="h-16 px-10 text-xl font-bold gap-3 bg-primary hover:bg-primary/90 shadow-glow-primary hover-lift rounded-2xl"
               asChild
             >
-              <Link href="/talleres">
-                ¡Empezar ahora! <ArrowRight className="w-6 h-6" />
+              <Link href="/#registro">
+                Inscribirme Ahora <ArrowRight className="w-6 h-6" />
               </Link>
             </Button>
             <Button

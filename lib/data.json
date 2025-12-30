@@ -14,8 +14,7 @@
       "lugar": "Sala PUM",
       "cupos": 15,
       "categoria": "Música",
-      "nivel": "Principiante",
-      "imagen": "/cursos/clases guitarra.jpg"
+      "nivel": "Principiante"
     },
     {
       "id": 2,
@@ -31,8 +30,7 @@
       "lugar": "Sala PUM",
       "cupos": 15,
       "categoria": "Música",
-      "nivel": "Principiante",
-      "imagen": "/cursos/clases de cajon.jpg"
+      "nivel": "Principiante"
     },
     {
       "id": 3,
@@ -48,8 +46,7 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Tecnología",
-      "nivel": "Kids",
-      "imagen": "/cursos/clases de Robótica e Internet de las cosas - Kids.jpg"
+      "nivel": "Kids"
     },
     {
       "id": 4,
@@ -65,8 +62,7 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Tecnología",
-      "nivel": "Junior",
-      "imagen": "/cursos/clases de Robótica e Internet de las cosas - Junior.jpg"
+      "nivel": "Junior"
     },
     {
       "id": 5,
@@ -82,8 +78,7 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Tecnología",
-      "nivel": "Avanzado",
-      "imagen": "/cursos/clases de Robótica Avanzada para competidores.jpg"
+      "nivel": "Avanzado"
     },
     {
       "id": 6,
@@ -99,8 +94,7 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Programación",
-      "nivel": "Kids",
-      "imagen": "/cursos/clases de Programación e Inteligencia Artificial - Kids.jpg"
+      "nivel": "Kids"
     },
     {
       "id": 7,
@@ -116,8 +110,7 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Programación",
-      "nivel": "Junior",
-      "imagen": "/cursos/clases de Programación e Inteligencia Artificial - Junior.png"
+      "nivel": "Junior"
     },
     {
       "id": 8,
@@ -133,24 +126,7 @@
       "lugar": "CE Chosica",
       "cupos": 30,
       "categoria": "Deporte",
-      "nivel": "Todos",
-      "imagen": "/cursos/clases de natacion.jpg"
-    },
-    {
-      "id": 9,
-      "titulo": "Clases de Tai Chi",
-      "descripcion": "Práctica milenaria para mejorar el equilibrio, la concentración y la salud integral.",
-      "precio": 0,
-      "duracion": "Inicia 10/01/2026",
-      "instructor": "Por confirmar",
-      "horario": "10:00 am – 11:00 am",
-      "dias": "Sábados",
-      "modalidad": "Presencial",
-      "lugar": "Sala PUM - Sótano 2",
-      "cupos": 30,
-      "categoria": "Bienestar",
       "nivel": "Todos"
-      
     }
   ]
 }

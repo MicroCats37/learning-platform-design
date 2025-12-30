@@ -5,6 +5,8 @@ import { CourseGrid } from "@/components/course-grid"
 import { Footer } from "@/components/footer"
 import { motion } from "framer-motion"
 import { Sparkles } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function TalleresPage() {
   return (
@@ -31,6 +33,9 @@ export default function TalleresPage() {
               Explora nuestra oferta completa de talleres de verano diseñados para despertar tu potencial ingenieril con
               proyectos reales y prácticos.
             </p>
+            <Button size="lg" className="mt-8 h-14 px-8 font-bold shadow-glow-primary" asChild>
+              <Link href="/#registro">Inscribirme ahora</Link>
+            </Button>
           </motion.div>
         </div>
       </section>

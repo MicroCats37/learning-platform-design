@@ -68,7 +68,7 @@ export function CTASection() {
                     </Link>
                   </Button>
                   <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-2 bg-transparent" asChild>
-                    <Link href="/registro">Registrarme Gratis</Link>
+                    <Link href="/#registro">Inscribirme Ahora</Link>
                   </Button>
                 </motion.div>
               </div>

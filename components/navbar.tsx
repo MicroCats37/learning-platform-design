@@ -5,9 +5,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const isMobile = useIsMobile()
   const { scrollY } = useScroll()
   const backgroundColor = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.95)"])
   const borderOpacity = useTransform(scrollY, [0, 100], [0, 1])
@@ -23,17 +26,17 @@ export function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
     >
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        {/* <CHANGE> Replaced text logo with Image placeholder */}
         <Link href="/" className="flex items-center gap-3 group">
-          <motion.div
-            whileHover={{ rotate: 360, scale: 1.1 }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <div className="w-11 h-11 gradient-primary rounded-xl flex items-center justify-center font-black text-white text-xl shadow-glow-primary">
-              C
-            </div>
-            <div className="absolute inset-0 gradient-secondary rounded-xl blur opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
-          </motion.div>
+          <div className="relative w-12 h-12">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/descarga-kqX2pRbdDRhGnZncotp21cIaRlKoSP.png"
+              alt="Logo CIP"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
           <div className="flex flex-col">
             <span className="font-black text-xl tracking-tighter leading-none">CIP E-LEARNING</span>
             <span className="text-[9px] text-muted-foreground font-semibold tracking-wider uppercase">
@@ -46,7 +49,7 @@ export function Navbar() {
           {[
             { href: "/", label: "Inicio" },
             { href: "/talleres", label: "Talleres" },
-            { href: "/registro", label: "Registro" },
+            { href: "/#registro", label: "Registro" },
           ].map((link) => (
             <Link
               key={link.href}
@@ -59,16 +62,14 @@ export function Navbar() {
           ))}
         </nav>
 
+        {/* <CHANGE> Removed auth buttons, only Registration CTA remains */}
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="hidden sm:flex font-bold">
-            Ingresar
-          </Button>
           <Button
             size="sm"
-            className="bg-primary hover:bg-primary/90 font-bold shadow-glow-primary hover:scale-105 transition-transform"
+            className="hidden sm:flex bg-primary hover:bg-primary/90 font-bold shadow-glow-primary hover:scale-105 transition-transform"
             asChild
           >
-            <Link href="/registro">Empezar Gratis</Link>
+            <Link href="/#registro">Inscribirme</Link>
           </Button>
           <Button
             variant="ghost"
@@ -94,7 +95,7 @@ export function Navbar() {
             {[
               { href: "/", label: "Inicio" },
               { href: "/talleres", label: "Talleres" },
-              { href: "/registro", label: "Registro" },
+              { href: "/#registro", label: "Registro" },
             ].map((link) => (
               <Link
                 key={link.href}
