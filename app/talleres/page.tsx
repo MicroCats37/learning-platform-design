@@ -24,7 +24,7 @@ export default function TalleresPage() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary-foreground text-xs font-bold mb-6 border border-secondary/30">
               <Sparkles className="w-3 h-3" />
-              TALLERES 2025
+              TALLERES 2026
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
               Catálogo de <span className="text-gradient-primary">Innovación</span>

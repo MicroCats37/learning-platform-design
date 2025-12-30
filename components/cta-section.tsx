@@ -31,7 +31,7 @@ export function CTASection() {
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/20 text-secondary-foreground font-medium mb-6"
                 >
                   <Sparkles className="w-4 h-4 text-secondary" />
-                  Talleres de Verano 2025
+                  Talleres de Verano 2026
                 </motion.div>
 
                 <motion.h2

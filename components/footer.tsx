@@ -72,7 +72,7 @@ export function Footer() {
           </div>
         </div>
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2025 Colegio de Ingenieros del Perú. Todos los derechos reservados.</p>
+          <p>© 2026 Colegio de Ingenieros del Perú. Todos los derechos reservados.</p>
           <div className="flex gap-8">
             <span>Powered by Vercel AI</span>
             <span>Diseñado para Ingenieros</span>

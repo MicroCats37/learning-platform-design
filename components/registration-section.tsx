@@ -27,7 +27,7 @@ export function RegistrationSection() {
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/20 text-secondary-foreground text-sm font-medium mb-6 border border-secondary/30"
             >
               <Sparkles className="w-4 h-4 text-secondary" />
-              Registro de Talleres 2025
+              Registro de Talleres 2026
             </motion.div>
             <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tight">
               Inscríbete <span className="text-gradient-primary">Ahora</span>

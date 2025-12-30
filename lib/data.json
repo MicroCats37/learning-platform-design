@@ -3,9 +3,10 @@
     {
       "id": 1,
       "titulo": "Clases de Guitarra",
+      "slug": "clases-de-guitarra",
       "descripcion": "Desarrolla tu talento musical con clases prácticas de guitarra. Aprende desde acordes básicos hasta técnicas avanzadas.",
-      "precio": 240,
-      "precioHabilitado": 220,
+      "precio": 150,
+      "precioHabilitado": 120,
       "duracion": "8 semanas",
       "instructor": "Adrian Zevallos",
       "horario": "10:00 am - 11:00 am",
@@ -14,14 +15,16 @@
       "lugar": "Sala PUM",
       "cupos": 15,
       "categoria": "Música",
-      "nivel": "Principiante"
+      "nivel": "Principiante",
+      "imagen": "/talleres/clases guitarra.jpg"
     },
     {
       "id": 2,
       "titulo": "Clases de Cajón",
+      "slug": "clases-de-cajon",
       "descripcion": "Conéctate con nuestras raíces rítmicas. Clases de cajón peruano para todos los niveles, enfocadas en ritmo y coordinación.",
-      "precio": 240,
-      "precioHabilitado": 220,
+      "precio": 150,
+      "precioHabilitado": 120,
       "duracion": "8 semanas",
       "instructor": "Adrian Zevallos",
       "horario": "11:00 am - 12:00 pm",
@@ -30,11 +33,13 @@
       "lugar": "Sala PUM",
       "cupos": 15,
       "categoria": "Música",
-      "nivel": "Principiante"
+      "nivel": "Principiante",
+      "imagen": "/talleres/clases de cajon.jpg"
     },
     {
       "id": 3,
       "titulo": "Robótica e Internet de las cosas - Kids",
+      "slug": "robotica-e-internet-de-las-cosas-kids",
       "descripcion": "Iniciación a la robótica y el mundo conectado para los más pequeños. Proyectos prácticos y divertidos.",
       "precio": 500,
       "precioHabilitado": 450,
@@ -46,11 +51,13 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Tecnología",
-      "nivel": "Kids"
+      "nivel": "Kids",
+      "imagen": "/talleres/clases de Robótica e Internet de las cosas - Kids.jpg"
     },
     {
       "id": 4,
       "titulo": "Robótica e Internet de las cosas - Junior",
+      "slug": "robotica-e-internet-de-las-cosas-junior",
       "descripcion": "Desarrolla proyectos de IoT y robótica de nivel intermedio. Aprende programación y electrónica aplicada.",
       "precio": 500,
       "precioHabilitado": 450,
@@ -62,11 +69,13 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Tecnología",
-      "nivel": "Junior"
+      "nivel": "Junior",
+      "imagen": "/talleres/clases de Robótica e Internet de las cosas - Junior.jpg"
     },
     {
       "id": 5,
       "titulo": "Robótica Avanzada para competidores",
+      "slug": "robotica-avanzada-para-competidores",
       "descripcion": "Entrenamiento intensivo para competencias de robótica. Algoritmos avanzados y mecánica de precisión.",
       "precio": 500,
       "precioHabilitado": 450,
@@ -78,11 +87,13 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Tecnología",
-      "nivel": "Avanzado"
+      "nivel": "Avanzado",
+      "imagen": "/talleres/clases de Robótica Avanzada para competidores.jpg"
     },
     {
       "id": 6,
       "titulo": "Programación e Inteligencia Artificial - Kids",
+      "slug": "programacion-e-inteligencia-artificial-kids",
       "descripcion": "Primeros pasos en el código y la IA. Aprende a crear tus propios programas inteligentes.",
       "precio": 500,
       "precioHabilitado": 450,
@@ -94,11 +105,13 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Programación",
-      "nivel": "Kids"
+      "nivel": "Kids",
+      "imagen": "/talleres/clases de Programación e Inteligencia Artificial - Kids.jpg"
     },
     {
       "id": 7,
       "titulo": "Programación e Inteligencia Artificial - Junior",
+      "slug": "programacion-e-inteligencia-artificial-junior",
       "descripcion": "Desarrollo de software y machine learning para jóvenes. Proyectos reales de IA.",
       "precio": 500,
       "precioHabilitado": 450,
@@ -110,11 +123,13 @@
       "lugar": "Sala 1, 2 y 3",
       "cupos": 20,
       "categoria": "Programación",
-      "nivel": "Junior"
+      "nivel": "Junior",
+      "imagen": "/talleres/clases de Programación e Inteligencia Artificial - Junior.png"
     },
     {
       "id": 8,
       "titulo": "Clases de Natación",
+      "slug": "clases-de-natacion",
       "descripcion": "Aprende y perfecciona tus estilos de natación en un ambiente seguro y divertido.",
       "precio": 200,
       "precioHabilitado": 180,
@@ -126,6 +141,23 @@
       "lugar": "CE Chosica",
       "cupos": 30,
       "categoria": "Deporte",
+      "nivel": "Todos",
+      "imagen": "/talleres/clases de natacion.jpg"
+    },
+    {
+      "id": 9,
+      "titulo": "Clases de Tai Chi",
+      "slug": "clases-de-tai-chi",
+      "descripcion": "Práctica milenaria para mejorar el equilibrio, la concentración y la salud integral.",
+      "precio": 0,
+      "duracion": "Inicia 10/01/2026",
+      "instructor": "Por confirmar",
+      "horario": "10:00 am – 11:00 am",
+      "dias": "Sábados",
+      "modalidad": "Presencial",
+      "lugar": "Sala PUM - Sótano 2",
+      "cupos": 30,
+      "categoria": "Bienestar",
       "nivel": "Todos"
     }
   ]

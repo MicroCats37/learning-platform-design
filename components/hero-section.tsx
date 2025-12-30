@@ -100,7 +100,7 @@ export function HeroSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
             </span>
-            Talleres de Verano 2025 - Inscripciones Abiertas
+            Talleres de Verano 2026 - Inscripciones Abiertas
           </motion.div>
 
           <h1
