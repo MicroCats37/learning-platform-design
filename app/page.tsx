@@ -8,7 +8,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 import { FeaturedCarousel } from "@/components/featured-carousel"
-import { RegistrationSection } from "@/components/registration-section"
+// import { RegistrationSection } from "@/components/registration-section"
 import { motion } from "framer-motion"
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
       </section>
 
       <FeaturesSection />
-      
+
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
@@ -87,9 +87,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* <CHANGE> Added Registration Section */}
-      <RegistrationSection />
 
       <TestimonialsSection />
       <CTASection />

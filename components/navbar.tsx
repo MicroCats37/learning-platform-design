@@ -26,16 +26,10 @@ export function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
     >
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        {/* <CHANGE> Replaced text logo with Image placeholder */}
+        {/* Replaced text logo with Image placeholder */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-12 h-12">
-            <Image
-              src="/images/logo.png"
-              alt="Logo CIP"
-              fill
-              className="object-contain"
-              priority
-            />
+            <Image src="/images/logo.png" alt="Logo CIP" fill className="object-contain" priority />
           </div>
           <div className="flex flex-col">
             <span className="font-black text-lg tracking-tighter leading-none">CONSEJO DEPARTAMENTAL DE LIMA</span>
@@ -49,27 +43,22 @@ export function Navbar() {
           {[
             { href: "/", label: "Inicio" },
             { href: "/talleres", label: "Talleres" },
-            { href: "/#registro", label: "Registro" },
+            { href: "/registro", label: "Registro" },
           ].map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="relative hover:text-primary transition-colors group/link"
-            >
+            <Link key={link.href} href={link.href} className="relative hover:text-primary transition-colors group/link">
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/link:w-full" />
             </Link>
           ))}
         </nav>
 
-        {/* <CHANGE> Removed auth buttons, only Registration CTA remains */}
         <div className="flex items-center gap-3">
           <Button
             size="sm"
             className="hidden sm:flex bg-primary hover:bg-primary/90 font-bold shadow-glow-primary hover:scale-105 transition-transform"
             asChild
           >
-            <Link href="/#registro">Inscribirme</Link>
+            <Link href="/registro">Inscribirme</Link>
           </Button>
           <Button
             variant="ghost"
@@ -95,7 +84,7 @@ export function Navbar() {
             {[
               { href: "/", label: "Inicio" },
               { href: "/talleres", label: "Talleres" },
-              { href: "/#registro", label: "Registro" },
+              { href: "/registro", label: "Registro" },
             ].map((link) => (
               <Link
                 key={link.href}

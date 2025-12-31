@@ -4,103 +4,105 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Colores más vibrantes y saturados para un look más juvenil y "veraniego" */
-  --background: oklch(0.99 0.01 85);
-  --foreground: oklch(0.15 0.02 25);
+  /* <CHANGE> Updated to CIP institutional colors: Professional and trustworthy */
+  --background: oklch(0.98 0.005 80);
+  --foreground: oklch(0.19 0.003 25); /* Dark Grey #2A2A29 */
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.02 25);
+  --card-foreground: oklch(0.19 0.003 25);
 
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.02 25);
+  --popover-foreground: oklch(0.19 0.003 25);
 
-  /* Rojo institucional más intenso */
-  --primary: oklch(0.55 0.25 25);
+  /* <CHANGE> Primary Red: #E31E24 */
+  --primary: oklch(0.51 0.23 25);
   --primary-foreground: oklch(1 0 0);
 
-  /* Dorado/Amarillo institucional más cálido y brillante */
-  --secondary: oklch(0.85 0.18 85);
-  --secondary-foreground: oklch(0.15 0.02 25);
+  /* <CHANGE> Gold accent: #D7B56D */
+  --secondary: oklch(0.76 0.08 80);
+  --secondary-foreground: oklch(0.19 0.003 25);
 
-  --muted: oklch(0.94 0.01 85);
-  --muted-foreground: oklch(0.45 0.02 25);
+  --muted: oklch(0.96 0.003 80);
+  --muted-foreground: oklch(0.48 0.003 25);
 
-  --accent: oklch(0.8 0.15 80);
-  --accent-foreground: oklch(0.15 0.02 25);
+  --accent: oklch(0.73 0.07 75);
+  --accent-foreground: oklch(0.19 0.003 25);
 
-  --destructive: oklch(0.5 0.25 25);
+  --destructive: oklch(0.51 0.23 25);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.9 0.02 85);
-  --input: oklch(0.9 0.02 85);
-  --ring: oklch(0.55 0.25 25);
+  --border: oklch(0.92 0.003 80);
+  --input: oklch(0.92 0.003 80);
+  --ring: oklch(0.51 0.23 25);
 
-  --chart-1: oklch(0.48 0.28 25);
-  --chart-2: oklch(0.82 0.16 85);
-  --chart-3: oklch(0.55 0.18 45);
-  --chart-4: oklch(0.65 0.2 65);
-  --chart-5: oklch(0.7 0.15 95);
+  --chart-1: oklch(0.51 0.23 25);
+  --chart-2: oklch(0.76 0.08 80);
+  --chart-3: oklch(0.60 0.15 50);
+  --chart-4: oklch(0.65 0.12 70);
+  --chart-5: oklch(0.70 0.09 90);
 
-  --radius: 1rem; /* Bordes más redondeados para estilo juvenil */
+  /* <CHANGE> Reduced border radius for more institutional look */
+  --radius: 0.5rem;
 
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.2 0.01 25);
-  --sidebar-primary: oklch(0.48 0.28 25);
+  --sidebar-foreground: oklch(0.19 0.003 25);
+  --sidebar-primary: oklch(0.51 0.23 25);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.97 0.005 85);
-  --sidebar-accent-foreground: oklch(0.2 0.01 25);
-  --sidebar-border: oklch(0.89 0.01 85);
-  --sidebar-ring: oklch(0.48 0.28 25);
+  --sidebar-accent: oklch(0.97 0.005 80);
+  --sidebar-accent-foreground: oklch(0.19 0.003 25);
+  --sidebar-border: oklch(0.89 0.003 80);
+  --sidebar-ring: oklch(0.51 0.23 25);
 }
 
 .dark {
-  --background: oklch(0.15 0.015 25);
-  --foreground: oklch(0.98 0.005 85);
+  --background: oklch(0.16 0.003 25);
+  --foreground: oklch(0.98 0.005 80);
 
-  --card: oklch(0.18 0.015 25);
-  --card-foreground: oklch(0.98 0.005 85);
+  --card: oklch(0.19 0.003 25);
+  --card-foreground: oklch(0.98 0.005 80);
 
-  --popover: oklch(0.16 0.015 25);
-  --popover-foreground: oklch(0.98 0.005 85);
+  --popover: oklch(0.17 0.003 25);
+  --popover-foreground: oklch(0.98 0.005 80);
 
-  --primary: oklch(0.55 0.26 25);
+  --primary: oklch(0.55 0.24 25);
   --primary-foreground: oklch(1 0 0);
 
-  --secondary: oklch(0.78 0.14 85);
-  --secondary-foreground: oklch(0.15 0.015 25);
+  --secondary: oklch(0.73 0.07 80);
+  --secondary-foreground: oklch(0.19 0.003 25);
 
-  --muted: oklch(0.25 0.015 25);
-  --muted-foreground: oklch(0.65 0.01 85);
+  --muted: oklch(0.24 0.003 25);
+  --muted-foreground: oklch(0.65 0.003 80);
 
-  --accent: oklch(0.72 0.13 75);
-  --accent-foreground: oklch(0.98 0.005 85);
+  --accent: oklch(0.70 0.06 75);
+  --accent-foreground: oklch(0.98 0.005 80);
 
-  --destructive: oklch(0.5 0.25 25);
+  --destructive: oklch(0.55 0.24 25);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.25 0.015 25);
-  --input: oklch(0.25 0.015 25);
-  --ring: oklch(0.55 0.26 25);
+  --border: oklch(0.24 0.003 25);
+  --input: oklch(0.24 0.003 25);
+  --ring: oklch(0.55 0.24 25);
 
-  --chart-1: oklch(0.55 0.26 25);
-  --chart-2: oklch(0.78 0.14 85);
-  --chart-3: oklch(0.6 0.16 45);
-  --chart-4: oklch(0.68 0.18 65);
-  --chart-5: oklch(0.72 0.13 95);
+  --chart-1: oklch(0.55 0.24 25);
+  --chart-2: oklch(0.73 0.07 80);
+  --chart-3: oklch(0.62 0.14 50);
+  --chart-4: oklch(0.67 0.11 70);
+  --chart-5: oklch(0.72 0.08 90);
 
-  --sidebar: oklch(0.18 0.015 25);
-  --sidebar-foreground: oklch(0.98 0.005 85);
-  --sidebar-primary: oklch(0.55 0.26 25);
+  --sidebar: oklch(0.19 0.003 25);
+  --sidebar-foreground: oklch(0.98 0.005 80);
+  --sidebar-primary: oklch(0.55 0.24 25);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.25 0.015 25);
-  --sidebar-accent-foreground: oklch(0.98 0.005 85);
-  --sidebar-border: oklch(0.25 0.015 25);
-  --sidebar-ring: oklch(0.55 0.26 25);
+  --sidebar-accent: oklch(0.24 0.003 25);
+  --sidebar-accent-foreground: oklch(0.98 0.005 80);
+  --sidebar-border: oklch(0.24 0.003 25);
+  --sidebar-ring: oklch(0.55 0.24 25);
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  /* <CHANGE> Updated to Arial for institutional, professional typography */
+  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -147,73 +149,131 @@
     @apply bg-background text-foreground;
   }
 
-  /* Utilidades personalizadas para gradientes vibrantes */
+  /* <CHANGE> Updated gradients with institutional CIP colors */
   .gradient-primary {
-    background: linear-gradient(135deg, oklch(0.48 0.28 25) 0%, oklch(0.55 0.26 15) 100%);
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.45 0.20 20) 100%);
   }
 
   .gradient-secondary {
-    background: linear-gradient(135deg, oklch(0.82 0.16 85) 0%, oklch(0.85 0.15 75) 100%);
+    background: linear-gradient(135deg, oklch(0.76 0.08 80) 0%, oklch(0.72 0.07 75) 100%);
   }
 
   .gradient-hero {
-    background: linear-gradient(135deg, oklch(0.48 0.28 25) 0%, oklch(0.55 0.24 35) 50%, oklch(0.82 0.16 85) 100%);
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.19 0.003 25) 50%, oklch(0.76 0.08 80) 100%);
   }
 
   .gradient-accent {
-    background: linear-gradient(135deg, oklch(0.55 0.24 35) 0%, oklch(0.75 0.14 75) 100%);
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.73 0.07 75) 100%);
   }
 
-  /* Sombras más profundas y suaves para un efecto de "elevación" */
+  /* <CHANGE> More subtle, professional shadows for institutional design */
   .shadow-glow-primary {
-    box-shadow: 0 12px 40px -6px oklch(0.55 0.25 25 / 0.35), 0 6px 20px -4px oklch(0.55 0.25 25 / 0.2);
+    box-shadow: 0 8px 32px -6px oklch(0.51 0.23 25 / 0.25), 0 4px 16px -4px oklch(0.51 0.23 25 / 0.15);
   }
 
   .shadow-glow-secondary {
-    box-shadow: 0 12px 40px -6px oklch(0.85 0.18 85 / 0.4), 0 6px 20px -4px oklch(0.85 0.18 85 / 0.25);
+    box-shadow: 0 8px 32px -6px oklch(0.76 0.08 80 / 0.3), 0 4px 16px -4px oklch(0.76 0.08 80 / 0.2);
   }
 
   .shadow-lifted {
-    box-shadow: 0 20px 60px -10px oklch(0.2 0.01 25 / 0.15), 0 10px 30px -5px oklch(0.2 0.01 25 / 0.1);
+    box-shadow: 0 4px 16px -2px oklch(0.19 0.003 25 / 0.08), 0 2px 8px -1px oklch(0.19 0.003 25 / 0.05);
   }
 
   .shadow-card-hover {
-    box-shadow: 0 32px 64px -16px oklch(0.15 0.02 25 / 0.15);
+    box-shadow: 0 12px 32px -8px oklch(0.19 0.003 25 / 0.12), 0 6px 16px -4px oklch(0.19 0.003 25 / 0.08);
   }
 
-  /* Efectos de texto con gradiente */
+  /* <CHANGE> Updated text gradients with CIP brand colors */
   .text-gradient-primary {
-    background: linear-gradient(135deg, oklch(0.48 0.28 25) 0%, oklch(0.82 0.16 85) 100%);
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.76 0.08 80) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, oklch(0.75 0.14 75) 0%, oklch(0.85 0.15 85) 50%, oklch(0.75 0.14 75) 100%);
+    background: linear-gradient(135deg, oklch(0.72 0.07 75) 0%, oklch(0.76 0.08 80) 50%, oklch(0.72 0.07 75) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  /* Animaciones de hover mejoradas */
+  /* <CHANGE> Subtle hover effects for professional interface */
   .hover-lift {
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
   }
 
   .hover-lift:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-4px);
   }
 
-  /* Bordes con gradiente */
+  /* <CHANGE> Border gradients with CIP colors */
   .border-gradient {
     border: 2px solid transparent;
     background: linear-gradient(white, white) padding-box,
-      linear-gradient(135deg, oklch(0.48 0.28 25), oklch(0.82 0.16 85)) border-box;
+      linear-gradient(135deg, oklch(0.51 0.23 25), oklch(0.76 0.08 80)) border-box;
   }
 
-  /* Estilos para el carrusel infinito */
+  /* Carousel mask */
   .marquee-container {
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  }
+
+  /* <CHANGE> New utility classes for institutional UI */
+  .section-institutional {
+    @apply py-20 md:py-28;
+  }
+
+  .heading-institutional {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight;
+  }
+
+  .subheading-institutional {
+    @apply text-lg md:text-xl text-muted-foreground leading-relaxed;
+  }
+
+  .card-institutional {
+    @apply bg-card border border-border rounded-lg shadow-lifted hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  /* <CHANGE> Form and input improvements for institutional look */
+  input:focus,
+  select:focus,
+  textarea:focus {
+    @apply outline-none ring-2 ring-primary/20 border-primary;
+  }
+
+  /* <CHANGE> Button institutional styling */
+  .btn-institutional-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-md shadow-glow-primary transition-all hover:shadow-glow-primary;
+  }
+
+  .btn-institutional-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-6 py-3 rounded-md shadow-glow-secondary transition-all;
+  }
+
+  /* <CHANGE> Table improvements for institutional design */
+  table {
+    @apply w-full border-collapse;
+  }
+
+  thead {
+    @apply bg-muted border-b-2 border-primary/20;
+  }
+
+  thead th {
+    @apply px-4 py-3 text-left text-sm font-bold text-foreground uppercase tracking-wide;
+  }
+
+  tbody tr {
+    @apply border-b border-border hover:bg-muted/30 transition-colors;
+  }
+
+  tbody td {
+    @apply px-4 py-3 text-sm text-foreground;
+  }
+
+  tbody tr:last-child {
+    @apply border-b-0;
   }
 }

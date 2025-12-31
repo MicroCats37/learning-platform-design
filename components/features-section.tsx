@@ -7,54 +7,58 @@ import { Card, CardContent } from "@/components/ui/card"
 const features = [
   {
     icon: Zap,
-    title: "Aprendizaje Rápido",
-    description: "Metodologías probadas que aceleran tu progreso hasta 3x más rápido.",
+    title: "Aprendizaje Efectivo",
+    description: "Metodologías pedagógicas probadas que aceleran el desarrollo de competencias técnicas profesionales.",
   },
   {
     icon: Shield,
     title: "Certificación Oficial",
-    description: "Certificados avalados por el Colegio de Ingenieros del Perú.",
+    description:
+      "Certificados con respaldo institucional del Colegio de Ingenieros del Perú, reconocidos a nivel nacional.",
   },
   {
     icon: Video,
-    title: "Clases en Vivo",
-    description: "Interactúa en tiempo real con instructores expertos de la industria.",
+    title: "Clases Presenciales",
+    description: "Formación práctica con instructores calificados en instalaciones equipadas con tecnología moderna.",
   },
   {
     icon: BookOpen,
-    title: "Material Premium",
-    description: "Accede a recursos exclusivos, plantillas y proyectos reales.",
+    title: "Material Especializado",
+    description: "Acceso a recursos didácticos actualizados, manuales técnicos y documentación profesional.",
   },
   {
     icon: Sparkles,
-    title: "Comunidad Activa",
-    description: "Conéctate con miles de ingenieros que comparten tus mismos objetivos.",
+    title: "Red Profesional",
+    description: "Integración a una comunidad de ingenieros y técnicos que comparten experiencias y conocimientos.",
   },
   {
     icon: Rocket,
-    title: "Proyectos Reales",
-    description: "Construye un portafolio sólido con casos de estudio del mundo real.",
+    title: "Proyectos Aplicados",
+    description: "Desarrollo de casos prácticos basados en necesidades reales de la industria peruana.",
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="section-institutional bg-muted/20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">¿Por qué elegirnos?</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ofrecemos la mejor experiencia de aprendizaje diseñada específicamente para ingenieros ambiciosos.
+          <h2 className="heading-institutional mb-6">
+            ¿Por qué elegir <span className="text-primary">CIP</span>?
+          </h2>
+          <p className="subheading-institutional">
+            Ofrecemos excelencia académica respaldada por décadas de experiencia formando a los mejores profesionales de
+            la ingeniería en el Perú.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {features.map((feature, idx) => (
             <motion.div
               key={feature.title}
@@ -63,13 +67,13 @@ export function FeaturesSection() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
             >
-              <Card className="h-full border-none shadow-lifted hover:shadow-card-hover hover-lift group bg-card">
-                <CardContent className="p-8">
-                  <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <feature.icon className="w-7 h-7 text-white" />
+              <Card className="card-institutional h-full group">
+                <CardContent className="p-6 lg:p-8">
+                  <div className="w-16 h-16 rounded-lg bg-primary/10 border-2 border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:border-primary/40 transition-all duration-300">
+                    <feature.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-[15px]">{feature.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
