@@ -18,7 +18,7 @@ export function RegistrationModal({ slug, tallerName, triggerText = "Reservar mi
   const [isOpen, setIsOpen] = useState(false)
 
   // Lógica para detectar si es Tai Chi
-  // Verificamos si el slug contiene "tai-chi" para ser flexibles con "clases-de-tai-chi" o "taichi-verano-2026"
+  // Verificamos si el slug contiene "tai-chi" para ser flexibles con "clases-de-tai-chi"
   const isTaiChi = slug.includes("tai-chi")
 
   const handleSuccess = () => {

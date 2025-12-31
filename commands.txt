@@ -1,0 +1,17 @@
+Aquí tienes los comandos que usarás en tu terminal. He incluido el comando básico y la variante "pro" que es la que te recomiendo usar para evitar problemas de caché.
+
+1. El comando estándar (Recomendado)
+Este comando hace tres cosas: lee las variables, construye la imagen nueva y levanta los contenedores en segundo plano.
+
+Bash
+
+# Ejecutar desde la raíz de tu proyecto
+NEXT_PUBLIC_API_URL=https://api.tu-dominio.com docker compose up -d --build
+2. Los comandos de mantenimiento (Muy útiles)
+Si algo no funciona o quieres ver qué está pasando, usa estos:
+
+Ver los logs en tiempo real: (Para saber si Nginx encontró los certificados o si Next.js arrancó bien).
+
+Bash
+
+docker compose logs -f

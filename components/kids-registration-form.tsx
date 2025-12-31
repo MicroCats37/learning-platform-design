@@ -11,6 +11,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MultiSelect } from "@/components/ui/multi-select"
 import { useToast } from "@/hooks/use-toast"
 import { Trash2, UserPlus, Send } from "lucide-react"
+import { postGeneric } from "@/services/api/function"
 
 // ==========================================
 // 1. BASE DE DATOS DE HORARIOS (HARDCODED PARA VALIDACIÓN)
@@ -157,38 +158,40 @@ export function KidsRegistrationForm({
     control: form.control,
   })
 
-  async function onSubmit(data: KidsRegistrationValues) {
-    try {
-      console.log("[Form] Submitting Registration:", data)
-      const response = await fetch("/api/v1/registro-ninos", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
+async function onSubmit(data: KidsRegistrationValues) {
+  console.log("[Form] Submitting Registration:", data);
 
-      if (!response.ok) throw new Error("Error en el registro")
+  // 1. Llamada limpia al servicio con los genéricos correspondientes
+  const result = await postGeneric<any, KidsRegistrationValues>(
+    "/api/v1/registro-ninos",
+    data
+  );
 
-      toast({
-        title: "¡Registro exitoso!",
-        description: "Los talleres han sido reservados correctamente.",
-      })
-      form.reset()
-      console.log(data)
-      // ------------------------------------------------
-      // NUEVO: Si existe la función onSuccess, ejecútala para cerrar el modal
-      if (onSuccess) {
-        // Un pequeño timeout opcional para que el usuario vea el toast antes de cerrar
-        setTimeout(() => onSuccess(), 1500) 
-      }
-      // ------------------------------------------------
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "No se pudo completar el registro. Intente nuevamente.",
-        variant: "destructive",
-      })
-    }
+  // 2. Manejo de Error
+  if (!result.success) {
+    toast({
+      title: "Error",
+      description: result.error, // Mensaje procesado por tu errorHandler    // Estilo rojo de Shadcn
+    });
+    return;
   }
+
+  // 3. Éxito
+  toast({
+    title: "¡Registro exitoso!",
+    description: "Los talleres han sido reservados correctamente.",
+  });
+  
+  // 4. Limpieza de formulario
+  form.reset();
+
+  // 5. Cerrar modal con delay para permitir que se vea el toast
+  if (onSuccess) {
+    setTimeout(() => {
+      onSuccess();
+    }, 1500);
+  }
+}
 
   const handleNumericInput = (e: React.ChangeEvent<HTMLInputElement>, onChange: (value: string) => void) => {
     const value = e.target.value.replace(/[^0-9]/g, "");
@@ -265,7 +268,7 @@ export function KidsRegistrationForm({
             <Card key={field.id} className="relative border-secondary/20 shadow-sm overflow-visible">
               <CardHeader className="bg-secondary/5 py-3 rounded-t-xl">
                 <div className="flex items-center justify-between">
-                  <CardTitle className="text-sm font-medium text-[#2A2A29]">Hijo #{index + 1}</CardTitle>
+                  <CardTitle className="text-sm font-bold  text-[#2A2A29]">Hijo #{index + 1}</CardTitle>
                   {fields.length > 1 && (
                     <Button type="button" variant="ghost" size="sm" onClick={() => remove(index)} className="h-8 w-8 p-0 text-[#E31E24] hover:text-[#E31E24]/80 hover:bg-[#E31E24]/10"><Trash2 className="w-4 h-4" /></Button>
                   )}

@@ -8,6 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/hooks/use-toast"
 import { Send } from "lucide-react"
+import { postGeneric } from "@/services/api/function"
 interface TaiChiRegistrationFormProps {
   onSuccess?: () => void
 }
@@ -27,41 +28,42 @@ export function TaiChiRegistrationForm({ onSuccess }: TaiChiRegistrationFormProp
         correo: "",
         telefono: "",
       },
-      slug: "taichi-verano-2026",
+      slug: "clases-de-tai-chi",
     },
   })
 
-  async function onSubmit(data: TaiChiRegistrationValues) {
-    try {
-      console.log("Submitting Tai Chi Registration:", data)
-      const response = await fetch("/api/v1/registro-taichi", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
+async function onSubmit(data: TaiChiRegistrationValues) {
+  console.log("Submitting Tai Chi Registration:", data);
 
-      if (!response.ok) throw new Error("Error en el registro")
+  // 1. Llamada al servicio genérico
+  const result = await postGeneric<any, TaiChiRegistrationValues>(
+    "/api/v1/registro-taichi",
+    data
+  );
 
-      toast({
-        title: "¡Inscripción exitosa!",
-        description: "Se ha registrado correctamente al taller de Tai Chi.",
-      })
-      form.reset()
-      // ------------------------------------------------
-      // NUEVO: Si existe la función onSuccess, ejecútala para cerrar el modal
-      if (onSuccess) {
-        // Un pequeño timeout opcional para que el usuario vea el toast antes de cerrar
-        setTimeout(() => onSuccess(), 1500) 
-      }
-      // ------------------------------------------------
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "No se pudo completar la inscripción. Intente nuevamente.",
-        
-      })
-    }
+  // 2. Manejo de Error usando result.error
+  if (!result.success) {
+    toast({
+      title: "Error",
+      description: result.error, // <--- CAMBIO: Usamos el error que viene del result  // <--- Esto pone el Toast en color rojo (Shadcn)
+    });
+    return;
   }
+
+  // 3. Éxito
+  toast({
+    title: "¡Inscripción exitosa!",
+    description: "Se ha registrado correctamente al taller de Tai Chi.",
+    // Aquí no ponemos variant o usamos "default" para que sea verde/azul
+  });
+  
+  // 4. Limpieza y cierre
+  form.reset();
+
+  if (onSuccess) {
+    setTimeout(() => onSuccess(), 1500);
+  }
+}
 
   // Función para bloquear letras en campos numéricos
   const handleNumericInput = (e: React.ChangeEvent<HTMLInputElement>, onChange: (value: string) => void) => {

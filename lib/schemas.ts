@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 export const colegiadoSchema = z.object({
-  cip: z.string().min(6, "CIP debe tener al menos 6 caracteres").max(9, "CIP debe tener máximo 6 caracteresquerido"),
+  cip: z.string().min(3, "CIP debe tener al menos 3 caracteres").max(9, "CIP debe tener máximo 6 caracteresquerido"),
   dni: z.string().min(8, "DNI debe tener al menos 8 caracteres").max(8, "DNI debe tener máximo 8 caracteres"),
   nombre: z.string().min(1, "Nombre requerido"),
   apellido_paterno: z.string().min(1, "Apellido paterno requerido"),
@@ -28,7 +28,7 @@ export const kidsRegistrationSchema = z.object({
 
 export const taichiRegistrationSchema = z.object({
   colegiado: colegiadoSchema,
-  slug: z.literal("taichi-verano-2026").default("taichi-verano-2026"),
+  slug: z.literal("clases-de-tai-chi").default("clases-de-tai-chi"),
 })
 
 export type KidsRegistrationValues = z.infer<typeof kidsRegistrationSchema>
