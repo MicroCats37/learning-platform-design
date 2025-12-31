@@ -132,8 +132,8 @@ export function KidsRegistrationForm({
     defaultValues: {
       colegiado: {
         cip: "",
-        nombre_1: "",
-        nombre_2: "",
+        nombre: "",
+ 
         apellido_paterno: "",
         apellido_materno: "",
         correo: "",
@@ -142,8 +142,7 @@ export function KidsRegistrationForm({
       hijos: [
         {
           dni: "",
-          nombre_1: "",
-          nombre_2: "",
+          nombre: "",
           apellido_paterno: "",
           apellido_materno: "",
           fecha_nacimiento: "",
@@ -174,6 +173,7 @@ export function KidsRegistrationForm({
         description: "Los talleres han sido reservados correctamente.",
       })
       form.reset()
+      console.log(data)
       // ------------------------------------------------
       // NUEVO: Si existe la función onSuccess, ejecútala para cerrar el modal
       if (onSuccess) {
@@ -237,8 +237,7 @@ export function KidsRegistrationForm({
           <h3 className="text-xl font-bold border-b pb-2 text-[#2A2A29]">Datos del Colegiado</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormField control={form.control} name="colegiado.cip" render={({ field }) => (<FormItem><FormLabel>CIP del Colegiado</FormLabel><FormControl><Input placeholder="Ej. 123456" maxLength={9} {...field} onChange={(e) => handleNumericInput(e, field.onChange)}/></FormControl><FormMessage /></FormItem>)} />
-            <FormField control={form.control} name="colegiado.nombre_1" render={({ field }) => (<FormItem><FormLabel>Primer Nombre</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
-            <FormField control={form.control} name="colegiado.nombre_2" render={({ field }) => (<FormItem><FormLabel>Segundo Nombre</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
+            <FormField control={form.control} name="colegiado.nombre" render={({ field }) => (<FormItem><FormLabel>Nombre Completo</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
             <FormField control={form.control} name="colegiado.apellido_paterno" render={({ field }) => (<FormItem><FormLabel>Apellido Paterno</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
             <FormField control={form.control} name="colegiado.apellido_materno" render={({ field }) => (<FormItem><FormLabel>Apellido Materno</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
             <FormField control={form.control} name="colegiado.correo" render={({ field }) => (<FormItem><FormLabel>Correo</FormLabel><FormControl><Input type="email" {...field} /></FormControl><FormMessage /></FormItem>)} />
@@ -248,13 +247,13 @@ export function KidsRegistrationForm({
 
         {/* Datos de los Hijos */}
         <div className="space-y-6">
-          <div className="flex flex-wrap items-center justify-between border-b pb-2">
+          <div className="flex flex-wrap items-center justify-between bord:r-b pb-2">
             <h3 className="text-xl font-bold text-[#2A2A29]">Datos de los Hijos</h3>
             <Button
               type="button"
               variant="outline"
               size="sm"
-              onClick={() => append({ dni: "", nombre_1: "", nombre_2: "", apellido_paterno: "", apellido_materno: "", fecha_nacimiento: "", talleres_slugs: [] })}
+              onClick={() => append({ dni: "", nombre: "", apellido_paterno: "", apellido_materno: "", fecha_nacimiento: "", talleres_slugs: [] })}
               className="gap-2 border-[#D7B56D] text-[#2A2A29] hover:bg-[#D7B56D]/10"
             >
               <UserPlus className="w-4 h-4" /> Agregar Hijo
@@ -275,8 +274,7 @@ export function KidsRegistrationForm({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <FormField control={form.control} name={`hijos.${index}.dni`} render={({ field }) => (<FormItem><FormLabel>DNI</FormLabel><FormControl><Input maxLength={8} {...field} onChange={(e) => handleNumericInput(e, field.onChange)} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={form.control} name={`hijos.${index}.fecha_nacimiento`} render={({ field }) => (<FormItem><FormLabel>Nacimiento</FormLabel><FormControl><Input type="date" {...field} /></FormControl><FormMessage /></FormItem>)} />
-                  <FormField control={form.control} name={`hijos.${index}.nombre_1`} render={({ field }) => (<FormItem><FormLabel>Nombre 1</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
-                  <FormField control={form.control} name={`hijos.${index}.nombre_2`} render={({ field }) => (<FormItem><FormLabel>Nombre 2</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
+                  <FormField control={form.control} name={`hijos.${index}.nombre`} render={({ field }) => (<FormItem><FormLabel>Nombre 1</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={form.control} name={`hijos.${index}.apellido_paterno`} render={({ field }) => (<FormItem><FormLabel>Ap. Paterno</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={form.control} name={`hijos.${index}.apellido_materno`} render={({ field }) => (<FormItem><FormLabel>Ap. Materno</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
 
