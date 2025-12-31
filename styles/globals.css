@@ -1,82 +1,111 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* <CHANGE> Updated to CIP institutional colors: Professional and trustworthy */
+  --background: oklch(0.98 0.005 80);
+  --foreground: oklch(0.19 0.003 25); /* Dark Grey #2A2A29 */
+
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.19 0.003 25);
+
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
+  --popover-foreground: oklch(0.19 0.003 25);
+
+  /* <CHANGE> Primary Red: #E31E24 */
+  --primary: oklch(0.51 0.23 25);
+  --primary-foreground: oklch(1 0 0);
+
+  /* <CHANGE> Gold accent: CORREGIDO A UN DORADO MÁS VIVO Y METÁLICO */
+  /* Antes: 0.76 0.08 80 (Apagado) -> Ahora: 0.82 0.18 85 (Oro Vivo) */
+  --secondary: oklch(0.82 0.18 85);
+  --secondary-foreground: oklch(0.19 0.003 25);
+
+  --muted: oklch(0.96 0.003 80);
+  --muted-foreground: oklch(0.48 0.003 25);
+
+  --accent: oklch(0.73 0.07 75);
+  --accent-foreground: oklch(0.19 0.003 25);
+
+  --destructive: oklch(0.51 0.23 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.92 0.003 80);
+  --input: oklch(0.92 0.003 80);
+  --ring: oklch(0.51 0.23 25);
+
+  --chart-1: oklch(0.51 0.23 25);
+  --chart-2: oklch(0.82 0.18 85); /* Actualizado para coincidir con el oro */
+  --chart-3: oklch(0.60 0.15 50);
+  --chart-4: oklch(0.65 0.12 70);
+  --chart-5: oklch(0.70 0.09 90);
+
+  /* <CHANGE> Reduced border radius for more institutional look */
+  --radius: 0.5rem;
+
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-foreground: oklch(0.19 0.003 25);
+  --sidebar-primary: oklch(0.51 0.23 25);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.97 0.005 80);
+  --sidebar-accent-foreground: oklch(0.19 0.003 25);
+  --sidebar-border: oklch(0.89 0.003 80);
+  --sidebar-ring: oklch(0.51 0.23 25);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --background: oklch(0.16 0.003 25);
+  --foreground: oklch(0.98 0.005 80);
+
+  --card: oklch(0.19 0.003 25);
+  --card-foreground: oklch(0.98 0.005 80);
+
+  --popover: oklch(0.17 0.003 25);
+  --popover-foreground: oklch(0.98 0.005 80);
+
+  --primary: oklch(0.55 0.24 25);
+  --primary-foreground: oklch(1 0 0);
+
+  /* <CHANGE> Gold accent (Dark Mode): Un poco más brillante para resaltar en negro */
+  --secondary: oklch(0.85 0.18 85); 
+  --secondary-foreground: oklch(0.19 0.003 25);
+
+  --muted: oklch(0.24 0.003 25);
+  --muted-foreground: oklch(0.65 0.003 80);
+
+  --accent: oklch(0.70 0.06 75);
+  --accent-foreground: oklch(0.98 0.005 80);
+
+  --destructive: oklch(0.55 0.24 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.24 0.003 25);
+  --input: oklch(0.24 0.003 25);
+  --ring: oklch(0.55 0.24 25);
+
+  --chart-1: oklch(0.55 0.24 25);
+  --chart-2: oklch(0.85 0.18 85);
+  --chart-3: oklch(0.62 0.14 50);
+  --chart-4: oklch(0.67 0.11 70);
+  --chart-5: oklch(0.72 0.08 90);
+
+  --sidebar: oklch(0.19 0.003 25);
+  --sidebar-foreground: oklch(0.98 0.005 80);
+  --sidebar-primary: oklch(0.55 0.24 25);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.24 0.003 25);
+  --sidebar-accent-foreground: oklch(0.98 0.005 80);
+  --sidebar-border: oklch(0.24 0.003 25);
+  --sidebar-ring: oklch(0.55 0.24 25);
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  /* <CHANGE> Updated to Arial for institutional, professional typography */
+  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -101,10 +130,12 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -113,6 +144,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* === CORRECCIÓN: Sombras definidas aquí para que Tailwind las reconozca === */
+  /* Actualizado el brillo secundario para que combine con el nuevo dorado */
+  --shadow-glow-primary: 0 8px 32px -6px oklch(0.51 0.23 25 / 0.25), 0 4px 16px -4px oklch(0.51 0.23 25 / 0.15);
+  --shadow-glow-secondary: 0 8px 32px -6px oklch(0.82 0.18 85 / 0.4), 0 4px 16px -4px oklch(0.82 0.18 85 / 0.3);
+  --shadow-lifted: 0 4px 16px -2px oklch(0.19 0.003 25 / 0.08), 0 2px 8px -1px oklch(0.19 0.003 25 / 0.05);
+  --shadow-card-hover: 0 12px 32px -8px oklch(0.19 0.003 25 / 0.12), 0 6px 16px -4px oklch(0.19 0.003 25 / 0.08);
 }
 
 @layer base {
@@ -121,5 +159,122 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* <CHANGE> Updated gradients with institutional CIP colors */
+  .gradient-primary {
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.45 0.20 20) 100%);
+  }
+
+  .gradient-secondary {
+    /* Gradiente actualizado para usar el nuevo dorado vivo */
+    background: linear-gradient(135deg, oklch(0.85 0.18 85) 0%, oklch(0.78 0.18 85) 100%);
+  }
+
+  .gradient-hero {
+    /* Actualizado el punto final al nuevo dorado */
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.19 0.003 25) 50%, oklch(0.82 0.18 85) 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.73 0.07 75) 100%);
+  }
+
+  /* <CHANGE> Updated text gradients with CIP brand colors */
+  .text-gradient-primary {
+    /* Actualizado el punto final al nuevo dorado */
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.82 0.18 85) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-gold {
+    /* Nuevo gradiente dorado mucho más vivo y metálico */
+    background: linear-gradient(135deg, oklch(0.85 0.18 85) 0%, oklch(0.90 0.20 90) 50%, oklch(0.82 0.18 85) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* <CHANGE> Subtle hover effects for professional interface */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* <CHANGE> Border gradients with CIP colors */
+  .border-gradient {
+    border: 2px solid transparent;
+    /* Actualizado al nuevo dorado */
+    background: linear-gradient(white, white) padding-box,
+      linear-gradient(135deg, oklch(0.51 0.23 25), oklch(0.82 0.18 85)) border-box;
+  }
+
+  /* Carousel mask */
+  .marquee-container {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  }
+
+  /* <CHANGE> New utility classes for institutional UI */
+  .section-institutional {
+    @apply py-20 md:py-28;
+  }
+
+  .heading-institutional {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight;
+  }
+
+  .subheading-institutional {
+    @apply text-lg md:text-xl text-muted-foreground leading-relaxed;
+  }
+
+  .card-institutional {
+    /* Aquí ya funciona shadow-lifted porque lo movimos al @theme */
+    @apply bg-card border border-border rounded-lg shadow-lifted hover:shadow-card-hover transition-shadow duration-300;
+  }
+
+  /* <CHANGE> Form and input improvements for institutional look */
+  input:focus,
+  select:focus,
+  textarea:focus {
+    @apply outline-none ring-2 ring-primary/20 border-primary;
+  }
+
+  /* <CHANGE> Button institutional styling */
+  .btn-institutional-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-md shadow-glow-primary transition-all hover:shadow-glow-primary;
+  }
+
+  .btn-institutional-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-6 py-3 rounded-md shadow-glow-secondary transition-all;
+  }
+
+  /* <CHANGE> Table improvements for institutional design */
+  table {
+    @apply w-full border-collapse;
+  }
+
+  thead {
+    @apply bg-muted border-b-2 border-primary/20;
+  }
+
+  thead th {
+    @apply px-4 py-3 text-left text-sm font-bold text-foreground uppercase tracking-wide;
+  }
+
+  tbody tr {
+    @apply border-b border-border hover:bg-muted/30 transition-colors;
+  }
+
+  tbody td {
+    @apply px-4 py-3 text-sm text-foreground;
+  }
+
+  tbody tr:last-child {
+    @apply border-b-0;
   }
 }

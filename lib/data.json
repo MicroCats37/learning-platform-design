@@ -16,7 +16,7 @@
       "cupos": 15,
       "categoria": "Música",
       "nivel": "Principiante",
-      "imagen": "/talleres/clases guitarra.jpg"
+      "imagen": "/talleres/clases_guitarra.jpg"
     },
     {
       "id": 2,
@@ -34,7 +34,7 @@
       "cupos": 15,
       "categoria": "Música",
       "nivel": "Principiante",
-      "imagen": "/talleres/clases de cajon.jpg"
+      "imagen": "/talleres/clases_de_cajon.jpg"
     },
     {
       "id": 3,
@@ -52,7 +52,7 @@
       "cupos": 20,
       "categoria": "Tecnología",
       "nivel": "Kids",
-      "imagen": "/talleres/clases de Robótica e Internet de las cosas - Kids.jpg"
+      "imagen": "/talleres/clases_de_robotica_e_internet_de_las_cosas_kids.jpg"
     },
     {
       "id": 4,
@@ -70,7 +70,7 @@
       "cupos": 20,
       "categoria": "Tecnología",
       "nivel": "Junior",
-      "imagen": "/talleres/clases de Robótica e Internet de las cosas - Junior.jpg"
+      "imagen": "/talleres/clases_de_robotica_e_internet_de_las_cosas_junior.jpg"
     },
     {
       "id": 5,
@@ -88,7 +88,7 @@
       "cupos": 20,
       "categoria": "Tecnología",
       "nivel": "Avanzado",
-      "imagen": "/talleres/clases de Robótica Avanzada para competidores.jpg"
+      "imagen": "/talleres/clases_de_robotica_avanzada_para_competidores.jpg"
     },
     {
       "id": 6,
@@ -106,7 +106,7 @@
       "cupos": 20,
       "categoria": "Programación",
       "nivel": "Kids",
-      "imagen": "/talleres/clases de Programación e Inteligencia Artificial - Kids.jpg"
+      "imagen": "/talleres/clases_de_programacion_e_inteligencia_artificial_kids.jpg"
     },
     {
       "id": 7,
@@ -124,7 +124,7 @@
       "cupos": 20,
       "categoria": "Programación",
       "nivel": "Junior",
-      "imagen": "/talleres/clases de Programación e Inteligencia Artificial - Junior.png"
+      "imagen": "/talleres/clases_de_programacion_e_inteligencia_artificial_junior.png"
     },
     {
       "id": 8,
@@ -134,7 +134,7 @@
       "precio": 200,
       "precioHabilitado": 180,
       "duracion": "Mensual",
-      "instructor": "Personal Especializado",
+      "instructor": "Por Confirmar",
       "horario": "Por confirmar",
       "dias": "Por confirmar",
       "modalidad": "Presencial",
@@ -142,7 +142,7 @@
       "cupos": 30,
       "categoria": "Deporte",
       "nivel": "Todos",
-      "imagen": "/talleres/clases de natacion.jpg"
+      "imagen": "/talleres/clases_de_natacion.jpg"
     },
     {
       "id": 9,
@@ -159,7 +159,7 @@
       "cupos": 30,
       "categoria": "Bienestar",
       "nivel": "Todos",
-      "imagen": "/talleres/clases de Tai Chi.jpeg"
+      "imagen": "/talleres/clases_de_tai_chi.jpeg"
     }
   ]
 }

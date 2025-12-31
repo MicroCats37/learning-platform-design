@@ -2,6 +2,7 @@ import { z } from "zod"
 
 export const colegiadoSchema = z.object({
   cip: z.string().min(6, "CIP debe tener al menos 6 caracteres").max(9, "CIP debe tener máximo 6 caracteresquerido"),
+  dni: z.string().min(8, "DNI debe tener al menos 8 caracteres").max(8, "DNI debe tener máximo 8 caracteres"),
   nombre: z.string().min(1, "Nombre requerido"),
   apellido_paterno: z.string().min(1, "Apellido paterno requerido"),
   apellido_materno: z.string().optional(),

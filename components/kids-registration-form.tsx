@@ -133,7 +133,7 @@ export function KidsRegistrationForm({
       colegiado: {
         cip: "",
         nombre: "",
- 
+        dni: "",
         apellido_paterno: "",
         apellido_materno: "",
         correo: "",
@@ -217,7 +217,7 @@ export function KidsRegistrationForm({
         toast({
           title: "⚠️ Cruce de Horarios",
           description: `No puedes elegir "${labelNuevoTaller}" porque se cruza con "${labelExistente}".`,
-          variant: "destructive",
+          
           duration: 4000,
         });
         return; // Detenemos: No agregamos el nuevo slug
@@ -237,6 +237,7 @@ export function KidsRegistrationForm({
           <h3 className="text-xl font-bold border-b pb-2 text-[#2A2A29]">Datos del Colegiado</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormField control={form.control} name="colegiado.cip" render={({ field }) => (<FormItem><FormLabel>CIP del Colegiado</FormLabel><FormControl><Input placeholder="Ej. 123456" maxLength={9} {...field} onChange={(e) => handleNumericInput(e, field.onChange)}/></FormControl><FormMessage /></FormItem>)} />
+            <FormField control={form.control} name="colegiado.dni" render={({ field }) => (<FormItem><FormLabel>DNI del Colegiado</FormLabel><FormControl><Input placeholder="Ej. 87654321" maxLength={8} {...field} onChange={(e) => handleNumericInput(e, field.onChange)}/></FormControl><FormMessage /></FormItem>)} />
             <FormField control={form.control} name="colegiado.nombre" render={({ field }) => (<FormItem><FormLabel>Nombre Completo</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
             <FormField control={form.control} name="colegiado.apellido_paterno" render={({ field }) => (<FormItem><FormLabel>Apellido Paterno</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
             <FormField control={form.control} name="colegiado.apellido_materno" render={({ field }) => (<FormItem><FormLabel>Apellido Materno</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
@@ -274,7 +275,7 @@ export function KidsRegistrationForm({
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <FormField control={form.control} name={`hijos.${index}.dni`} render={({ field }) => (<FormItem><FormLabel>DNI</FormLabel><FormControl><Input maxLength={8} {...field} onChange={(e) => handleNumericInput(e, field.onChange)} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={form.control} name={`hijos.${index}.fecha_nacimiento`} render={({ field }) => (<FormItem><FormLabel>Nacimiento</FormLabel><FormControl><Input type="date" {...field} /></FormControl><FormMessage /></FormItem>)} />
-                  <FormField control={form.control} name={`hijos.${index}.nombre`} render={({ field }) => (<FormItem><FormLabel>Nombre 1</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
+                  <FormField control={form.control} name={`hijos.${index}.nombre`} render={({ field }) => (<FormItem><FormLabel>Nombre Completo</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={form.control} name={`hijos.${index}.apellido_paterno`} render={({ field }) => (<FormItem><FormLabel>Ap. Paterno</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
                   <FormField control={form.control} name={`hijos.${index}.apellido_materno`} render={({ field }) => (<FormItem><FormLabel>Ap. Materno</FormLabel><FormControl><Input {...field} /></FormControl><FormMessage /></FormItem>)} />
 

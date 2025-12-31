@@ -18,8 +18,9 @@
   --primary: oklch(0.51 0.23 25);
   --primary-foreground: oklch(1 0 0);
 
-  /* <CHANGE> Gold accent: #D7B56D */
-  --secondary: oklch(0.76 0.08 80);
+  /* <CHANGE> Gold accent: CORREGIDO A UN DORADO MÁS VIVO Y METÁLICO */
+  /* Antes: 0.76 0.08 80 (Apagado) -> Ahora: 0.82 0.18 85 (Oro Vivo) */
+  --secondary: oklch(0.82 0.18 85);
   --secondary-foreground: oklch(0.19 0.003 25);
 
   --muted: oklch(0.96 0.003 80);
@@ -36,7 +37,7 @@
   --ring: oklch(0.51 0.23 25);
 
   --chart-1: oklch(0.51 0.23 25);
-  --chart-2: oklch(0.76 0.08 80);
+  --chart-2: oklch(0.82 0.18 85); /* Actualizado para coincidir con el oro */
   --chart-3: oklch(0.60 0.15 50);
   --chart-4: oklch(0.65 0.12 70);
   --chart-5: oklch(0.70 0.09 90);
@@ -67,7 +68,8 @@
   --primary: oklch(0.55 0.24 25);
   --primary-foreground: oklch(1 0 0);
 
-  --secondary: oklch(0.73 0.07 80);
+  /* <CHANGE> Gold accent (Dark Mode): Un poco más brillante para resaltar en negro */
+  --secondary: oklch(0.85 0.18 85); 
   --secondary-foreground: oklch(0.19 0.003 25);
 
   --muted: oklch(0.24 0.003 25);
@@ -84,7 +86,7 @@
   --ring: oklch(0.55 0.24 25);
 
   --chart-1: oklch(0.55 0.24 25);
-  --chart-2: oklch(0.73 0.07 80);
+  --chart-2: oklch(0.85 0.18 85);
   --chart-3: oklch(0.62 0.14 50);
   --chart-4: oklch(0.67 0.11 70);
   --chart-5: oklch(0.72 0.08 90);
@@ -103,6 +105,7 @@
   /* <CHANGE> Updated to Arial for institutional, professional typography */
   --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
   --font-mono: "Courier New", Courier, monospace;
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -127,10 +130,12 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -139,6 +144,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* === CORRECCIÓN: Sombras definidas aquí para que Tailwind las reconozca === */
+  /* Actualizado el brillo secundario para que combine con el nuevo dorado */
+  --shadow-glow-primary: 0 8px 32px -6px oklch(0.51 0.23 25 / 0.25), 0 4px 16px -4px oklch(0.51 0.23 25 / 0.15);
+  --shadow-glow-secondary: 0 8px 32px -6px oklch(0.82 0.18 85 / 0.4), 0 4px 16px -4px oklch(0.82 0.18 85 / 0.3);
+  --shadow-lifted: 0 4px 16px -2px oklch(0.19 0.003 25 / 0.08), 0 2px 8px -1px oklch(0.19 0.003 25 / 0.05);
+  --shadow-card-hover: 0 12px 32px -8px oklch(0.19 0.003 25 / 0.12), 0 6px 16px -4px oklch(0.19 0.003 25 / 0.08);
 }
 
 @layer base {
@@ -155,44 +167,31 @@
   }
 
   .gradient-secondary {
-    background: linear-gradient(135deg, oklch(0.76 0.08 80) 0%, oklch(0.72 0.07 75) 100%);
+    /* Gradiente actualizado para usar el nuevo dorado vivo */
+    background: linear-gradient(135deg, oklch(0.85 0.18 85) 0%, oklch(0.78 0.18 85) 100%);
   }
 
   .gradient-hero {
-    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.19 0.003 25) 50%, oklch(0.76 0.08 80) 100%);
+    /* Actualizado el punto final al nuevo dorado */
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.19 0.003 25) 50%, oklch(0.82 0.18 85) 100%);
   }
 
   .gradient-accent {
     background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.73 0.07 75) 100%);
   }
 
-  /* <CHANGE> More subtle, professional shadows for institutional design */
-  .shadow-glow-primary {
-    box-shadow: 0 8px 32px -6px oklch(0.51 0.23 25 / 0.25), 0 4px 16px -4px oklch(0.51 0.23 25 / 0.15);
-  }
-
-  .shadow-glow-secondary {
-    box-shadow: 0 8px 32px -6px oklch(0.76 0.08 80 / 0.3), 0 4px 16px -4px oklch(0.76 0.08 80 / 0.2);
-  }
-
-  .shadow-lifted {
-    box-shadow: 0 4px 16px -2px oklch(0.19 0.003 25 / 0.08), 0 2px 8px -1px oklch(0.19 0.003 25 / 0.05);
-  }
-
-  .shadow-card-hover {
-    box-shadow: 0 12px 32px -8px oklch(0.19 0.003 25 / 0.12), 0 6px 16px -4px oklch(0.19 0.003 25 / 0.08);
-  }
-
   /* <CHANGE> Updated text gradients with CIP brand colors */
   .text-gradient-primary {
-    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.76 0.08 80) 100%);
+    /* Actualizado el punto final al nuevo dorado */
+    background: linear-gradient(135deg, oklch(0.51 0.23 25) 0%, oklch(0.82 0.18 85) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, oklch(0.72 0.07 75) 0%, oklch(0.76 0.08 80) 50%, oklch(0.72 0.07 75) 100%);
+    /* Nuevo gradiente dorado mucho más vivo y metálico */
+    background: linear-gradient(135deg, oklch(0.85 0.18 85) 0%, oklch(0.90 0.20 90) 50%, oklch(0.82 0.18 85) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -210,8 +209,9 @@
   /* <CHANGE> Border gradients with CIP colors */
   .border-gradient {
     border: 2px solid transparent;
+    /* Actualizado al nuevo dorado */
     background: linear-gradient(white, white) padding-box,
-      linear-gradient(135deg, oklch(0.51 0.23 25), oklch(0.76 0.08 80)) border-box;
+      linear-gradient(135deg, oklch(0.51 0.23 25), oklch(0.82 0.18 85)) border-box;
   }
 
   /* Carousel mask */
@@ -233,6 +233,7 @@
   }
 
   .card-institutional {
+    /* Aquí ya funciona shadow-lifted porque lo movimos al @theme */
     @apply bg-card border border-border rounded-lg shadow-lifted hover:shadow-card-hover transition-shadow duration-300;
   }
 

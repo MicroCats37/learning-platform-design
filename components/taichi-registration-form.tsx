@@ -20,6 +20,7 @@ export function TaiChiRegistrationForm({ onSuccess }: TaiChiRegistrationFormProp
     defaultValues: {
       colegiado: {
         cip: "",
+        dni: "",
         nombre: "",
         apellido_paterno: "",
         apellido_materno: "",
@@ -57,7 +58,7 @@ export function TaiChiRegistrationForm({ onSuccess }: TaiChiRegistrationFormProp
       toast({
         title: "Error",
         description: "No se pudo completar la inscripción. Intente nuevamente.",
-        variant: "destructive",
+        
       })
     }
   }
@@ -88,6 +89,24 @@ export function TaiChiRegistrationForm({ onSuccess }: TaiChiRegistrationFormProp
                     <Input 
                       placeholder="Ej. 123456" 
                       maxLength={9} 
+                      {...field} 
+                      onChange={(e) => handleNumericInput(e, field.onChange)}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="colegiado.dni"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>DNI del Colegiado</FormLabel>
+                  <FormControl>
+                    <Input 
+                      placeholder="Ej. 87654321" 
+                      maxLength={8} 
                       {...field} 
                       onChange={(e) => handleNumericInput(e, field.onChange)}
                     />

@@ -119,14 +119,20 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
             </div>
             <div className="flex items-center gap-2 bg-muted/30 p-2 rounded-xl border border-border/50">
               <User className="w-3.5 h-3.5 text-secondary shrink-0" />
-              <span className="truncate">{taller.instructor.split(" ").pop()}</span>
+              <span className="truncate">{taller.instructor}</span>
             </div>
           </div>
         </CardContent>
 
         <CardFooter className="pt-0 pb-6">
-          <Button
-            className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-black shadow-glow-primary group/btn rounded-xl"
+          {
+            taller.slug==="clases-de-natacion"? (
+              <Button className='w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-black shadow-glow-primary group/btn rounded-xl opacity-50'>
+                No Disponible
+              </Button>
+            ):(
+              <Button
+            className={`cursor-pointer w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-black shadow-glow-primary group/btn rounded-xl`}
             asChild
           >
 
@@ -135,6 +141,10 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
               tallerName={taller.titulo}
             />
           </Button>
+
+            )
+          }
+          
         </CardFooter>
       </Card>
     </motion.div>
