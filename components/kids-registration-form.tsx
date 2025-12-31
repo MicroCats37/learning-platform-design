@@ -146,7 +146,7 @@ export function KidsRegistrationForm({
           apellido_paterno: "",
           apellido_materno: "",
           fecha_nacimiento: "",
-          talleres_slugs: defaultTallerSlug ? [defaultTallerSlug] : [],
+          talleres: defaultTallerSlug ? [defaultTallerSlug] : [],
         },
       ],
     },
@@ -253,7 +253,7 @@ export function KidsRegistrationForm({
               type="button"
               variant="outline"
               size="sm"
-              onClick={() => append({ dni: "", nombre: "", apellido_paterno: "", apellido_materno: "", fecha_nacimiento: "", talleres_slugs: [] })}
+              onClick={() => append({ dni: "", nombre: "", apellido_paterno: "", apellido_materno: "", fecha_nacimiento: "", talleres: [] })}
               className="gap-2 border-[#D7B56D] text-[#2A2A29] hover:bg-[#D7B56D]/10"
             >
               <UserPlus className="w-4 h-4" /> Agregar Hijo
@@ -280,7 +280,7 @@ export function KidsRegistrationForm({
 
                   <FormField
                     control={form.control}
-                    name={`hijos.${index}.talleres_slugs`}
+                    name={`hijos.${index}.talleres`}
                     render={({ field }) => (
                       <FormItem className="md:col-span-2 mt-2">
                         <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">

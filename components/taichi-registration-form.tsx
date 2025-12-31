@@ -20,8 +20,7 @@ export function TaiChiRegistrationForm({ onSuccess }: TaiChiRegistrationFormProp
     defaultValues: {
       colegiado: {
         cip: "",
-        nombre_1: "",
-        nombre_2: "",
+        nombre: "",
         apellido_paterno: "",
         apellido_materno: "",
         correo: "",
@@ -101,27 +100,12 @@ export function TaiChiRegistrationForm({ onSuccess }: TaiChiRegistrationFormProp
             {/* Primer Nombre */}
             <FormField
               control={form.control}
-              name="colegiado.nombre_1"
+              name="colegiado.nombre"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Primer Nombre</FormLabel>
                   <FormControl>
                     <Input placeholder="Nombre" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            {/* Segundo Nombre */}
-            <FormField
-              control={form.control}
-              name="colegiado.nombre_2"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Segundo Nombre (Opcional)</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Segundo nombre" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

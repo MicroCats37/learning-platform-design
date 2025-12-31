@@ -19,7 +19,7 @@ export const kidsRegistrationSchema = z.object({
         apellido_paterno: z.string().min(1, "Apellido paterno requerido"),
         apellido_materno: z.string().optional(),
         fecha_nacimiento: z.string().min(1, "Fecha de nacimiento requerida"), // YYYY-MM-DD
-        talleres_slugs: z.array(z.string()).min(1, "Seleccione al menos un taller"),
+        talleres: z.array(z.string()).min(1, "Seleccione al menos un taller"),
       }),
     )
     .min(1, "Debe agregar al menos un hijo"),
