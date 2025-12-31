@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/toaster"
 
 
 export const metadata: Metadata = {
-  title: "CIP E-Learning | Colegio de Ingenieros del Perú",
+  title: "CIP | Colegio de Ingenieros del Perú",
   description: "Plataforma de capacitación especializada para ingenieros y profesionales de la industria.",
   generator: "v0.app",
   icons: {

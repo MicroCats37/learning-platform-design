@@ -30,7 +30,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-12 h-12">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/descarga-kqX2pRbdDRhGnZncotp21cIaRlKoSP.png"
+              src="/images/logo.png"
               alt="Logo CIP"
               fill
               className="object-contain"
@@ -38,9 +38,9 @@ export function Navbar() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-black text-xl tracking-tighter leading-none">CIP E-LEARNING</span>
+            <span className="font-black text-lg tracking-tighter leading-none">CONSEJO DEPARTAMENTAL DE LIMA</span>
             <span className="text-[9px] text-muted-foreground font-semibold tracking-wider uppercase">
-              Talleres de Verano
+              Vacaciones Útiles
             </span>
           </div>
         </Link>

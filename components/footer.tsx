@@ -1,81 +1,133 @@
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react"
+
 export function Footer() {
+  
+  const socialLinks = [
+    {
+      name: "Facebook",
+      icon: Facebook,
+      href: "https://www.facebook.com/ciplimaoficial/?locale=es_LA",
+    },
+    {
+      name: "Twitter",
+      icon: Twitter,
+      href: "https://twitter.com/ciplimaoficial",
+    },
+    {
+      name: "Instagram",
+      icon: Instagram,
+      href: "https://www.instagram.com/ciplimaoficial?igsh=dnF3b215aHBkaGVt",
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      href: "https://pe.linkedin.com/company/ciplimaoficial",
+    },
+  ]
+
   return (
-    <footer className="bg-background border-t border-border py-12">
+    // CAMBIO PRINCIPAL: Fondo oscuro (un azul grisáceo profundo) y textos claros
+    <footer className="bg-[#E31E24] border-t border-slate-800 pt-16 pb-8 text-slate-100">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          <div className="col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center font-bold text-white">
-                C
+        <div className="grid md:grid-cols-12 gap-8 mb-12">
+          
+          {/* COLUMNA 1: LOGO E INFO */}
+          <div className="md:col-span-5 space-y-6">
+            <div className="flex items-center gap-3">
+              {/* Contenedor del logo con un sutil brillo rojo para destacar "el círculo" */}
+              <div className="rounded-full relative w-12 h-12 bg-white/5 p-1 rounded-full overflow-hidden border border-[#E31E24]/20 shadow-[0_0_15px_rgba(227,30,36,0.15)]">
+                <Image
+                  src="/images/logo.png"
+                  alt="Logo CIP"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <span className="font-bold text-lg tracking-tight">CIP E-LEARNING</span>
+              <div className="flex flex-col">
+                {/* Texto en blanco para contraste */}
+                <span className="font-extrabold text-xl leading-none text-white">CIP LIMA</span>
+                <span className="text-xs font-medium text-slate-100 tracking-widest">CONSEJO DEPARTAMENTAL DE LIMA</span>
+              </div>
             </div>
-            <p className="text-muted-foreground max-w-sm mb-6">
-              La plataforma líder en capacitación técnica para ingenieros en Perú, impulsada por el Colegio de
-              Ingenieros.
+            
+            <p className="text-slate-100 text-sm max-w-sm leading-relaxed">
+              Promoviendo la excelencia en la ingeniería peruana. 
+              Capacitación, certificación y desarrollo profesional para el crecimiento del país.
             </p>
-            <div className="flex gap-4">
-              {["FB", "TW", "IG", "LI"].map((s) => (
-                <div
-                  key={s}
-                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-xs font-bold hover:bg-primary hover:text-white transition-colors cursor-pointer"
+
+            {/* Redes Sociales Adaptadas al Tema Oscuro */}
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  // Fondo oscuro, icono blanco, hover rojo intenso
+                  className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-white transition-all duration-300 hover:bg-[#E31E24] hover:border-[#E31E24] hover:shadow-[0_0_10px_rgba(227,30,36,0.4)]"
+                  aria-label={social.name}
                 >
-                  {s}
-                </div>
+                  <social.icon className="w-5 h-5" />
+                </a>
               ))}
             </div>
           </div>
-          <div>
-            <h4 className="font-bold mb-6">Enlaces Rápidos</h4>
-            <ul className="space-y-4 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Sobre nosotros
-                </a>
+
+          {/* COLUMNA 2: ENLACES */}
+          <div className="md:col-span-2 md:col-start-7">
+            <h4 className="font-bold text-white mb-6">Plataforma</h4>
+            <ul className="space-y-3 text-sm">
+              {/* Los enlaces cambian a rojo al pasar el mouse */}
+              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Cursos Disponibles</Link></li>
+              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Instructores</Link></li>
+              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Validar Certificado</Link></li>
+              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Blog de Ingeniería</Link></li>
+            </ul>
+          </div>
+
+          {/* COLUMNA 3: LEGAL */}
+          <div className="md:col-span-2">
+            <h4 className="font-bold text-white mb-6">Legal</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Términos y condiciones</Link></li>
+              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Política de privacidad</Link></li>
+              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Libro de reclamaciones</Link></li>
+            </ul>
+          </div>
+
+          {/* COLUMNA 4: CONTACTO */}
+          <div className="md:col-span-2">
+            <h4 className="font-bold text-white mb-6">Contacto</h4>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start gap-3">
+                {/* Iconos en rojo CIP */}
+                <MapPin className="w-4 h-4 text-[#E31E24] mt-0.5" />
+                <span>Calle Barcelona 240, San Isidro, Lima - Perú</span>
               </li>
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Preguntas frecuentes
-                </a>
+              <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-[#E31E24]" />
+                <span>(01) 202-5000</span>
               </li>
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Blog de ingeniería
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Soporte
-                </a>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[#E31E24]" />
+                <span>informes@ciplima.org.pe</span>
               </li>
             </ul>
           </div>
-          <div>
-            <h4 className="font-bold mb-6">Legal</h4>
-            <ul className="space-y-4 text-sm text-muted-foreground">
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Términos y condiciones
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Política de cookies
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary">
-                  Libro de reclamaciones
-                </a>
-              </li>
-            </ul>
-          </div>
+
         </div>
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>© 2026 Colegio de Ingenieros del Perú. Todos los derechos reservados.</p>
-          <div className="flex gap-8">
-            <span>Powered by Vercel AI</span>
-            <span>Diseñado para Ingenieros</span>
+
+        {/* BARRA INFERIOR */}
+        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-100">
+          <p>© 2026 Colegio de Ingenieros del Perú - CD Lima. Todos los derechos reservados.</p>
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span className="text-slate-400">Sistemas operando al 100%</span>
           </div>
         </div>
       </div>

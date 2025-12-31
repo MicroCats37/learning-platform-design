@@ -25,7 +25,7 @@ export function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0])
 
   useEffect(() => {
-    const words = ["Ingeniería", "Tecnología", "Robótica", "Creatividad"]
+    const words = ["Tecnología", "Robótica", "Creatividad"]
     let currentIndex = 0
 
     const animateText = () => {
@@ -108,7 +108,7 @@ export function HeroSection() {
             className="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.9] mb-8 tracking-tighter"
           >
             Potencia tu <br />
-            <span className="text-primary italic animated-word inline-block min-w-[300px]">Ingeniería</span>
+            <span className="text-primary italic animated-word inline-block min-w-[300px]">Verano</span>
           </h1>
 
           <motion.p

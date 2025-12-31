@@ -158,7 +158,8 @@
       "lugar": "Sala PUM - Sótano 2",
       "cupos": 30,
       "categoria": "Bienestar",
-      "nivel": "Todos"
+      "nivel": "Todos",
+      "imagen": "/talleres/clases de Tai Chi.jpeg"
     }
   ]
 }
