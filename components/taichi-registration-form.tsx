@@ -8,8 +8,11 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/hooks/use-toast"
 import { Send } from "lucide-react"
+interface TaiChiRegistrationFormProps {
+  onSuccess?: () => void
+}
 
-export function TaiChiRegistrationForm() {
+export function TaiChiRegistrationForm({ onSuccess }: TaiChiRegistrationFormProps) {
   const { toast } = useToast()
   
   const form = useForm<TaiChiRegistrationValues>({
@@ -30,7 +33,7 @@ export function TaiChiRegistrationForm() {
 
   async function onSubmit(data: TaiChiRegistrationValues) {
     try {
-      console.log("[v0] Submitting Tai Chi Registration:", data)
+      console.log("Submitting Tai Chi Registration:", data)
       const response = await fetch("/api/v1/registro-taichi", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -44,6 +47,13 @@ export function TaiChiRegistrationForm() {
         description: "Se ha registrado correctamente al taller de Tai Chi.",
       })
       form.reset()
+      // ------------------------------------------------
+      // NUEVO: Si existe la función onSuccess, ejecútala para cerrar el modal
+      if (onSuccess) {
+        // Un pequeño timeout opcional para que el usuario vea el toast antes de cerrar
+        setTimeout(() => onSuccess(), 1500) 
+      }
+      // ------------------------------------------------
     } catch (error) {
       toast({
         title: "Error",

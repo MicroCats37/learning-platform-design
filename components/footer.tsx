@@ -124,7 +124,7 @@ export function Footer() {
 
         {/* BARRA INFERIOR */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-100">
-          <p>© 2026 Colegio de Ingenieros del Perú - CD Lima. Todos los derechos reservados.</p>
+          <p>© 2026 Colegio de Ingenieros del Perú - Lima. Todos los derechos reservados.</p>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
             <span className="text-slate-400">Sistemas operando al 100%</span>

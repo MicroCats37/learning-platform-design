@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Clock, User, Star, Sparkles } from "lucide-react"
 import Link from "next/link"
+import { RegistrationModal } from "./registration-modal"
 
 interface Taller {
   slug: string
@@ -87,10 +88,10 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
             <div className="flex flex-col">
               <span className="text-[10px] font-bold text-muted-foreground uppercase leading-none mb-1">General</span>
               <div className="text-xl font-black text-foreground">
-                {taller.precio!==0 && <span className="text-xs mr-0.5">S/</span>}
+                {taller.precio !== 0 && <span className="text-xs mr-0.5">S/</span>}
                 {taller.slug === "clases-de-guitarra" || taller.slug === "clases-de-cajon"
                   ? `${taller.precio} al mes`
-                  : (taller.precio===0 ? "Gratis" : taller.precio)}
+                  : (taller.precio === 0 ? "Gratis" : taller.precio)}
               </div>
 
             </div>
@@ -100,11 +101,11 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
                   Habilitado
                 </span>
                 <div className="text-xl font-black text-primary">
-                  {taller.precioHabilitado!==0 && <span className="text-xs mr-0.5">S/</span>}
+                  {taller.precioHabilitado !== 0 && <span className="text-xs mr-0.5">S/</span>}
                   {taller.slug === "clases-de-guitarra" ||
                     taller.slug === "clases-de-cajon"
                     ? `${taller.precioHabilitado} al mes`
-                    : ( taller.precioHabilitado===0 ? "Gratis" : taller.precioHabilitado)}
+                    : (taller.precioHabilitado === 0 ? "Gratis" : taller.precioHabilitado)}
                 </div>
               </div>
             )}
@@ -128,10 +129,11 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
             className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-black shadow-glow-primary group/btn rounded-xl"
             asChild
           >
-            <Link href="/#registro" className="flex items-center justify-center gap-2">
-              RESERVAR MI LUGAR
-              <Sparkles className="w-4 h-4 group-hover/btn:rotate-12 transition-transform" />
-            </Link>
+
+            <RegistrationModal
+              slug={taller.slug}
+              tallerName={taller.titulo}
+            />
           </Button>
         </CardFooter>
       </Card>

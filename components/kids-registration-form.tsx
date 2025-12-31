@@ -116,11 +116,13 @@ function checkConflict(tallerA_Slug: string, tallerB_Slug: string): boolean {
 interface Props {
   availableOptions?: typeof talleresOptions
   defaultTallerSlug?: string
+  onSuccess?: () => void
 }
 
 export function KidsRegistrationForm({ 
   availableOptions = talleresOptions, 
-  defaultTallerSlug 
+  defaultTallerSlug ,
+  onSuccess
 }: Props) {
   
   const { toast } = useToast()
@@ -172,6 +174,13 @@ export function KidsRegistrationForm({
         description: "Los talleres han sido reservados correctamente.",
       })
       form.reset()
+      // ------------------------------------------------
+      // NUEVO: Si existe la función onSuccess, ejecútala para cerrar el modal
+      if (onSuccess) {
+        // Un pequeño timeout opcional para que el usuario vea el toast antes de cerrar
+        setTimeout(() => onSuccess(), 1500) 
+      }
+      // ------------------------------------------------
     } catch (error) {
       toast({
         title: "Error",
