@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export function CTASection() {
   return (
-    <section className="py-24 relative overflow-hidden bg-background">
+    <section className="py-12 md:py-24 relative overflow-hidden bg-background">
       {/* Blobs de fondo usando tus variables OKLCH */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[oklch(0.51_0.23_25/0.08)] rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[oklch(0.82_0.18_85/0.1)] rounded-full blur-[120px]" />

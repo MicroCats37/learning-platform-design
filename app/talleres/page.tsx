@@ -27,7 +27,7 @@ export default function TalleresPage() {
               TALLERES 2026
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-              Catálogo de <span className="text-gradient-primary">Innovación</span>
+              Catálogo de <span className="text-gradient-primary">Talleres</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Explora nuestra oferta completa de talleres de verano diseñados para despertar tu potencial ingenieril con

@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Clock, User, Star, Sparkles } from "lucide-react"
-import Link from "next/link"
+// Agregamos Calendar y Timer a los imports
+import { Clock, User, Star, Calendar, Timer } from "lucide-react"
 import { RegistrationModal } from "./registration-modal"
 
 interface Taller {
@@ -14,14 +14,14 @@ interface Taller {
   titulo: string
   descripcion: string
   precio: number
-  precioHabilitado?: number // Agregado precio para colegiados habilitados
+  precioHabilitado?: number
   duracion: string
   instructor: string
   imagen?: string
   categoria: string
   nivel: string
   cupos: number
-  horario?: string
+  horario: string
   dias?: string
   modalidad?: string
   lugar?: string
@@ -29,7 +29,7 @@ interface Taller {
 
 interface CourseCardProps {
   taller: Taller
-  idx?: number // idx opcional para uso en carrusel
+  idx?: number
 }
 
 export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
@@ -93,8 +93,8 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
                   ? `${taller.precio} al mes`
                   : (taller.precio === 0 ? "Gratis" : taller.precio)}
               </div>
-
             </div>
+            
             {taller.precioHabilitado && (
               <div className="flex flex-col border-l pl-3 border-border">
                 <span className="text-[10px] font-bold text-primary uppercase leading-none mb-1">
@@ -109,18 +109,37 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
                 </div>
               </div>
             )}
-
           </div>
 
+          {/* --- AQUÍ ESTÁ LA NUEVA GRID ACTUALIZADA --- */}
           <div className="grid grid-cols-2 gap-2 text-[10px] font-bold text-muted-foreground">
+            
+            {/* 1. Días (Nuevo) */}
+            {taller.dias && (
+               <div className="flex items-center gap-2 bg-muted/30 p-2 rounded-xl border border-border/50">
+                 <Calendar className="w-3.5 h-3.5 text-primary shrink-0" />
+                 <span className="truncate">{taller.dias}</span>
+               </div>
+            )}
+
+            {/* 2. Horario (Nuevo) */}
             <div className="flex items-center gap-2 bg-muted/30 p-2 rounded-xl border border-border/50">
               <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
+              <span className="truncate">{taller.horario}</span>
+            </div>
+
+            {/* 3. Duración (Actualizado a icono Timer para no repetir Clock) */}
+            <div className="flex items-center gap-2 bg-muted/30 p-2 rounded-xl border border-border/50">
+              <Timer className="w-3.5 h-3.5 text-primary shrink-0" />
               <span className="truncate">{taller.duracion}</span>
             </div>
+
+            {/* 4. Instructor */}
             <div className="flex items-center gap-2 bg-muted/30 p-2 rounded-xl border border-border/50">
               <User className="w-3.5 h-3.5 text-secondary shrink-0" />
               <span className="truncate">{taller.instructor}</span>
             </div>
+
           </div>
         </CardContent>
 
@@ -132,19 +151,16 @@ export function CourseCard({ taller, idx = 0 }: CourseCardProps) {
               </Button>
             ):(
               <Button
-            className={`cursor-pointer w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-black shadow-glow-primary group/btn rounded-xl`}
-            asChild
-          >
-
-            <RegistrationModal
-              slug={taller.slug}
-              tallerName={taller.titulo}
-            />
-          </Button>
-
+                className={`cursor-pointer w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-black shadow-glow-primary group/btn rounded-xl`}
+                asChild
+              >
+                <RegistrationModal
+                  slug={taller.slug}
+                  tallerName={taller.titulo}
+                />
+              </Button>
             )
           }
-          
         </CardFooter>
       </Card>
     </motion.div>

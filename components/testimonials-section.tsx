@@ -41,7 +41,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-12 md:py-24  bg-background relative overflow-hidden">
       {/* Decoración de fondo difuminada con tu Dorado Vivo */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -translate-y-1/2" />
       

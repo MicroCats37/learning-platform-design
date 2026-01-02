@@ -83,10 +83,7 @@ export function Footer() {
             <h4 className="font-bold text-white mb-6">Plataforma</h4>
             <ul className="space-y-3 text-sm">
               {/* Los enlaces cambian a rojo al pasar el mouse */}
-              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Cursos Disponibles</Link></li>
-              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Instructores</Link></li>
-              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Validar Certificado</Link></li>
-              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Blog de Ingeniería</Link></li>
+              <li><Link href="/talleres" className="hover:text-[#E31E24] transition-colors">Cursos Disponibles</Link></li>
             </ul>
           </div>
 
@@ -94,9 +91,12 @@ export function Footer() {
           <div className="md:col-span-2">
             <h4 className="font-bold text-white mb-6">Legal</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Términos y condiciones</Link></li>
-              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Política de privacidad</Link></li>
-              <li><Link href="#" className="hover:text-[#E31E24] transition-colors">Libro de reclamaciones</Link></li>
+              <li><Link href="https://ciplima.org.pe/sistemas-integrados-gestion/" className="hover:text-[#E31E24] transition-colors" target="_blank" 
+    rel="noopener noreferrer">Politica del Sistema Integrado de Gestion</Link></li>
+              <li><Link href="https://ciplima.org.pe/politica-privacidad-datos-registrados/" className="hover:text-[#E31E24] transition-colors" target="_blank" 
+    rel="noopener noreferrer">Política de privacidad</Link></li>
+              <li><Link href="https://servicioscdl.ciplima.org.pe/libro-de-reclamaciones/" className="hover:text-[#E31E24] transition-colors" target="_blank" 
+    rel="noopener noreferrer">Libro de reclamaciones</Link></li>
             </ul>
           </div>
 

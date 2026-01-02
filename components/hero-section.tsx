@@ -40,19 +40,19 @@ export function HeroSection() {
 
   // Animación de desplazamiento (Parallax)
   const y = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "15%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0])
+  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0.2])
 
   // --- EFECTO 1: ROTACIÓN DE IMÁGENES DE FONDO ---
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length)
-    }, 7000)
+    }, 5000)
     return () => clearInterval(timer)
   }, [])
 
   // --- EFECTO 2: ANIMACIÓN DE TEXTO GSAP ---
   useEffect(() => {
-    const words = ["Tecnología", "Robótica", "Creatividad"]
+    const words = ["Tecnología", "Creatividad"]
     let currentIndex = 0
 
     const animateText = () => {
